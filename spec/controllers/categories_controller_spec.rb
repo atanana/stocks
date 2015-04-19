@@ -16,7 +16,13 @@ RSpec.describe CategoriesController, type: :controller do
       category1.save
       category2.save
       get :index
-      expect(response.body).to eq(controller.convert_categories([category1, category2]).to_json)
+      result = [category1, category2].map do |category|
+        {
+            id: category.id,
+            name: category.name
+        }
+      end
+      expect(response.body).to eq(result.to_json)
     end
   end
 end

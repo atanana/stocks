@@ -1,7 +1,5 @@
 class CategoriesController < ApplicationController
-  include CategoriesHelper
-
   def index
-    render json: convert_categories(Category.all)
+    render json: Category.all
   end
 end
