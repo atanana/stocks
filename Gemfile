@@ -27,6 +27,8 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'active_model_serializers'
+gem 'ember-rails'
+gem 'ember-source'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
