@@ -10,4 +10,11 @@ FactoryGirl.define do
   factory :product_packing do
     name 'test product packing'
   end
+
+  factory :product do
+    open false
+    association :category, factory: :category
+    association :product_type, factory: :product_type
+    association :product_packing, factory: :product_packing
+  end
 end
