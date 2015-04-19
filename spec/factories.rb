@@ -6,4 +6,8 @@ FactoryGirl.define do
   factory :product_type do
     name 'test product type'
   end
+
+  factory :product_packing do
+    name 'test product packing'
+  end
 end
