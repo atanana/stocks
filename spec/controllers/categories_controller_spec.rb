@@ -4,7 +4,7 @@ RSpec.describe CategoriesController, type: :controller do
   context 'without categories' do
     it 'empty json array' do
       get :index
-      expect(response.body).to eq([].to_json)
+      expect(response.body).to eq({categories: []}.to_json)
     end
   end
 
@@ -22,7 +22,7 @@ RSpec.describe CategoriesController, type: :controller do
             name: category.name
         }
       end
-      expect(response.body).to eq(result.to_json)
+      expect(response.body).to eq({categories: result}.to_json)
     end
   end
 end
