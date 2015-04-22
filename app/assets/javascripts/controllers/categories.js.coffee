@@ -1,11 +1,13 @@
 Stocks.CategoriesController = Ember.ArrayController.extend
   sortProperties: ['name'],
   actions:
-    detete_category: (category) ->
-      console.log(category)
+    delete_category: (category) ->
+      bootbox.confirm 'Are you sure?', (result) ->
+        if (result)
+          category.deleteRecord()
     edit_category: (category) ->
       bootbox.prompt
-        title: 'Изменить название категории'
+        title: 'Change name'
         value: category.get 'name'
         callback: (result) ->
           if result
