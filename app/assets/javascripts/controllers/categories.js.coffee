@@ -18,4 +18,5 @@ Stocks.CategoriesController = Ember.ArrayController.extend
         title: 'New category'
         callback: (result) =>
           if result
-            @store.createRecord 'category', name: result
+            category = @store.createRecord 'category', name: result
+            category.save()
