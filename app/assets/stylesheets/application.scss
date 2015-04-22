@@ -18,3 +18,12 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+.fa-times-circle {
+  color: $brand-danger;
+  cursor: pointer;
+}
+
+.fa-edit {
+  cursor: pointer;
+}

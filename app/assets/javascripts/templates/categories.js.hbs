@@ -7,18 +7,11 @@
                     {{#link-to 'category' category }}
                         {{category.name}}
                     {{/link-to}}
+                    <i class="fa fa-times-circle pull-right" {{action 'detete_category' category}} title="Удалить"></i>
+                    <i class="fa fa-edit pull-right" {{action 'edit_category' category}} title="Редактировать"></i>
                 </td>
             </tr>
         {{/each}}
-        <!--<tr ng-repeat="category in categories | orderBy:'name'">-->
-            <!--<td>-->
-                <!--<a href="#/categories/[[category.id]]">-->
-                    <!--[[ category.name ]]-->
-                <!--</a>-->
-                <!--<i class="fa fa-times-circle pull-right" ng-click="deleteCategory(category.id)" title="Удалить"></i>-->
-                <!--<i class="fa fa-edit pull-right" ng-click="editCategory(category.id, category.name)" title="Редактировать"></i>-->
-            <!--</td>-->
-        <!--</tr>-->
         </tbody>
     </table>
 

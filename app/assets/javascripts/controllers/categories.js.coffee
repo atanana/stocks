@@ -1,2 +1,7 @@
 Stocks.CategoriesController = Ember.ArrayController.extend
-  sortProperties: ['name']
+  sortProperties: ['name'],
+  actions:
+    detete_category: (category) ->
+      console.log(category)
+    edit_category: (category) ->
+      console.log(category)

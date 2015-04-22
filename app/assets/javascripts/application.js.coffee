@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require turbolinks
 #= require bootstrap-sprockets
+#= require bootbox
 #= require ember
 #= require ember-data
 #= require_self
