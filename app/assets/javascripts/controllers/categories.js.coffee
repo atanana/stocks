@@ -4,7 +4,7 @@ Stocks.CategoriesController = Ember.ArrayController.extend
     delete_category: (category) ->
       bootbox.confirm 'Are you sure?', (result) ->
         if (result)
-          category.deleteRecord()
+          category.destroyRecord()
     edit_category: (category) ->
       bootbox.prompt
         title: 'Change name'
@@ -13,3 +13,9 @@ Stocks.CategoriesController = Ember.ArrayController.extend
           if result
             category.set 'name', result
             category.save()
+    new_category: ->
+      bootbox.prompt
+        title: 'New category'
+        callback: (result) =>
+          if result
+            @store.createRecord 'category', name: result

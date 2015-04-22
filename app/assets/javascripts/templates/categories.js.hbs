@@ -7,8 +7,8 @@
                     {{#link-to 'category' category }}
                         {{category.name}}
                     {{/link-to}}
-                    <i class="fa fa-times-circle pull-right" {{action 'delete_category' category}} title="Удалить"></i>
-                    <i class="fa fa-edit pull-right" {{action 'edit_category' category}} title="Редактировать"></i>
+                    <i class="fa fa-times-circle pull-right" {{action 'delete_category' category}} title="Delete"></i>
+                    <i class="fa fa-edit pull-right" {{action 'edit_category' category}} title="Edit"></i>
                 </td>
             </tr>
         {{/each}}
@@ -16,8 +16,7 @@
     </table>
 
     <form class="form-inline pull-right">
-        <!--<input ng-model="newCategory" class="form-control" placeholder="Новая категория">-->
-        <!--<button ng-click="addCategory()" class="btn btn-default">Добавить</button>-->
+        <button {{action 'new_category'}} class="btn btn-default">Add category</button>
     </form>
 </div>
 
