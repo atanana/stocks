@@ -24,6 +24,12 @@
   cursor: pointer;
 }
 
-.fa-edit {
+.fa-edit, .fa-toggle-on, .fa-toggle-off {
   cursor: pointer;
+}
+
+.products-table {
+  tbody tr td:last-of-type {
+    text-align: center;
+  }
 }
