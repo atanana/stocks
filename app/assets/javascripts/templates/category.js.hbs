@@ -1,1 +1,14 @@
-<h1>{{model.name}}</h1>
+<div class="container-fluid">
+    <h1>{{model.name}}</h1>
+    <table class="table table-striped table-hover">
+        <tbody>
+        {{#each product in model.products}}
+            <tr>
+                <td>
+                    {{product.name}}
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
