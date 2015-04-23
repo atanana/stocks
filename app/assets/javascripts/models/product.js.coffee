@@ -5,4 +5,7 @@ Stocks.Product = DS.Model.extend
   ),
   product_type: DS.belongsTo('product_type',
     async: true
+  ),
+  product_packing: DS.belongsTo('product_type',
+    async: true
   )

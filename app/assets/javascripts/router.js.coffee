@@ -7,6 +7,8 @@ Stocks.Router.map ()->
     @resource 'product', path: '/:id'
   @resource 'product_types', path: '/product_types', ->
     @resource 'product_type', path: '/:id'
+  @resource 'product_packings', path: '/product_packings', ->
+    @resource 'product_packing', path: '/:id'
 
 Stocks.Router.reopen
   location: 'hash',
