@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ProductTypesController, type: :controller do
-  context 'with product' do
+  context 'with product type' do
     let (:product_type) { build :product_type }
 
     before(:each) do

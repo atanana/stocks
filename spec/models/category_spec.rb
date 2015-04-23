@@ -4,14 +4,14 @@ RSpec.describe Category, type: :model do
   it { is_expected.to respond_to(:name) }
 
   context 'with name' do
-    let(:category) { build :category }
+    let(:category) { build :category, name: 'test category' }
 
     it 'is valid' do
       expect(category).to be_valid
     end
 
     context 'with not unique name' do
-      let(:category2) { build :category }
+      let(:category2) { build :category, name: 'test category' }
 
       it 'is not valid' do
         category2.save

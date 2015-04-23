@@ -4,14 +4,14 @@ RSpec.describe ProductPacking, type: :model do
   it { is_expected.to respond_to(:name) }
 
   context 'with name' do
-    let(:product_packing) { build :product_packing }
+    let(:product_packing) { build :product_packing, name: 'test packing' }
 
     it 'is valid' do
       expect(product_packing).to be_valid
     end
 
     context 'with not unique name' do
-      let(:product_packing2) { build :product_packing }
+      let(:product_packing2) { build :product_packing, name: 'test packing' }
 
       it 'is not valid' do
         product_packing2.save
