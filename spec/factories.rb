@@ -1,14 +1,14 @@
 FactoryGirl.define do
   factory :category do
-    name 'test category'
+    name { SecureRandom.hex }
   end
 
   factory :product_type do
-    name 'test product type'
+    name { SecureRandom.hex }
   end
 
   factory :product_packing do
-    name 'test product packing'
+    name { SecureRandom.hex }
   end
 
   factory :product do
