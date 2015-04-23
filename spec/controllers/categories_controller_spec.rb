@@ -41,5 +41,23 @@ RSpec.describe CategoriesController, type: :controller do
         expect(data['category']['products'].size).to eq(1)
       end
     end
+
+    context 'update category' do
+      it 'should update category' do
+        old_name = category1.name
+        new_name = 'test'
+        put :update, id: category2.id, category: {name: new_name}
+        expect(response.body).to eq('true')
+        expect(Category.find(category2.id).name).to eq(new_name)
+        expect(Category.find(category1.id).name).to eq(old_name)
+      end
+    end
+
+    context 'delete category' do
+      it 'should delete category' do
+        delete :destroy, id:category1.id
+        expect(Category.all.size).to eq(1)
+      end
+    end
   end
 end
