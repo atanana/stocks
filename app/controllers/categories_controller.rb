@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    render json: category
+    render json: category, serializer: CategoryWithProductsSerializer
   end
 
   def create
