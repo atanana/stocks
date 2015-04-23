@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419102717) do
+ActiveRecord::Schema.define(version: 20150423085033) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       null: false
@@ -32,16 +32,16 @@ ActiveRecord::Schema.define(version: 20150419102717) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.boolean  "open",                null: false
-    t.integer  "product_types_id"
-    t.integer  "product_packings_id"
-    t.integer  "categories_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.boolean  "open",               null: false
+    t.integer  "product_type_id",    null: false
+    t.integer  "product_packing_id", null: false
+    t.integer  "category_id",        null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
-  add_index "products", ["categories_id"], name: "index_products_on_categories_id"
-  add_index "products", ["product_packings_id"], name: "index_products_on_product_packings_id"
-  add_index "products", ["product_types_id"], name: "index_products_on_product_types_id"
+  add_index "products", ["category_id"], name: "index_products_on_category_id"
+  add_index "products", ["product_packing_id"], name: "index_products_on_product_packing_id"
+  add_index "products", ["product_type_id"], name: "index_products_on_product_type_id"
 
 end

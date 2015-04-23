@@ -1,4 +1,4 @@
 class ProductPacking < ActiveRecord::Base
-  belongs_to :product, inverse_of: :products
+  has_many :products, inverse_of: :product_packing
   validates :name, presence: true, uniqueness: true
 end
