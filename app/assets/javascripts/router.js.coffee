@@ -1,8 +1,8 @@
 # For more information see: http://emberjs.com/guides/routing/
 
-Stocks.Router.map ()->
-  @resource 'categories', path: '/', ->
-    @resource 'category', path: '/category/:id'
+Stocks.Router.map () ->
+  @resource 'categories', path: '/categories', ->
+    @resource 'category', path: '/:id'
   @resource 'products', path: '/products', ->
     @resource 'product', path: '/:id'
   @resource 'product_types', path: '/product_types', ->
