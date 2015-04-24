@@ -24,9 +24,11 @@
                 </td>
                 <td>
                     {{#if product.open}}
-                        <i class="fa fa-toggle-on" title="Opened. Click to close"></i>
+                        <i class="fa fa-toggle-on" title="Opened. Click to close"
+                            {{action 'closeProduct' product}}></i>
                     {{else}}
-                        <i class="fa fa-toggle-off" title="Closed. Click to open"></i>
+                        <i class="fa fa-toggle-off" title="Closed. Click to open"
+                            {{action 'openProduct' product}}></i>
                     {{/if}}
                 </td>
             </tr>
