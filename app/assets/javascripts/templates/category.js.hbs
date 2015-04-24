@@ -17,7 +17,9 @@
         {{#each product in model.products}}
             <tr>
                 <td>
-                    {{product.product_type.name}}
+                    {{#link-to 'product' product}}
+                        {{product.product_type.name}}
+                    {{/link-to}}
                 </td>
                 <td>
                     {{product.product_packing.name}}

@@ -1,0 +1,1 @@
+Stocks.ProductController = Ember.Controller.extend()
