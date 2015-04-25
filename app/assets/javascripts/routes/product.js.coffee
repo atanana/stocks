@@ -9,7 +9,9 @@ Stocks.ProductRoute = Ember.Route.extend
   setupController: setupController
 
 Stocks.ProductsNewRoute = Ember.Route.extend
-  model: -> @store.createRecord 'product'
+  model: (params) ->
+    @store.find('category', params.category_id).then (category) =>
+      @store.createRecord 'product', category: category
   templateName: 'product'
   controllerName: 'product'
   setupController: setupController
