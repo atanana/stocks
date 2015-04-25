@@ -7,6 +7,10 @@ class ProductsController < ApplicationController
     render json: product.update(product_params)
   end
 
+  def create
+    render json: Product.create(product_params)
+  end
+
   private
 
     def product

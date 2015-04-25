@@ -32,4 +32,19 @@ RSpec.describe ProductsController, type: :controller do
       expect(product.product_packing).to eq(new_product_packing)
     end
   end
+
+  context 'without products' do
+    it 'create new product' do
+      category = create :category
+      product_type = create :product_type
+      product_packing = create :product_packing
+      post :create, product: {category_id: category.id, product_type_id: product_type.id,
+                              product_packing_id: product_packing.id, open: false}
+      expect(Product.all.size).to eq(1)
+      product = Product.first
+      expect(product.category).to eq(category)
+      expect(product.product_type).to eq(product_type)
+      expect(product.product_packing).to eq(product_packing)
+    end
+  end
 end

@@ -6,6 +6,12 @@ RSpec.describe CategoriesController, type: :controller do
       get :index
       expect(response.body).to eq({categories: []}.to_json)
     end
+
+    it 'create new category' do
+      post :create, category: {name: 'test category'}
+      expect(Category.all.size).to eq(1)
+      expect(Category.first.name).to eq('test category')
+    end
   end
 
   context 'with categories' do
