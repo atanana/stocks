@@ -1,5 +1,5 @@
 Stocks.Product = DS.Model.extend
-  open: DS.attr('boolean'),
+  open: DS.attr('boolean', defaultValue: false),
   category: DS.belongsTo('category',
     async: true
   ),

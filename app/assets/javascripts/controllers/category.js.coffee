@@ -6,3 +6,6 @@ Stocks.CategoryController = Ember.Controller.extend
     closeProduct: (product) ->
       product.set 'open', false
       product.save()
+    addProduct: ->
+      newProduct = @store.createRecord 'product', category: @get('model')
+      @transitionToRoute 'product', newProduct
