@@ -9,5 +9,5 @@ Stocks.Router.map () ->
   @resource 'product_packings', path: '/product_packings'
 
 Stocks.Router.reopen
-  location: 'auto',
+  location: 'hash',
   rootURL: '/'

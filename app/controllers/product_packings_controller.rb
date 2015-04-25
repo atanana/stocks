@@ -1,4 +1,8 @@
 class ProductPackingsController < ApplicationController
+  def index
+    render json: ProductPacking.all
+  end
+
   def show
     render json: product_packing
   end

@@ -1,23 +1,35 @@
 <form>
     <div class="form-group">
-        <label for="exampleInputEmail1">
+        <label for="productType">
             Product type
-            {{
-                view Ember.Select
-                classNames="form-control"
-                content=productTypes
-                value=model.product_type
-                optionValuePath="content.id"
-                optionLabelPath="content.name"
-            }}
         </label>
+
+        {{
+            view 'select'
+            id="productType"
+            classNames="form-control"
+            content=productTypes
+            value=model.product_type
+            optionValuePath="content.id"
+            optionLabelPath="content.name"
+        }}
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword1">Product packing</label>
+        <label for="productPacking">Product packing</label>
+        {{
+            view 'select'
+            id="productPacking"
+            classNames="form-control"
+            content=productPackings
+            value=model.product_packing
+            optionValuePath="content.id"
+            optionLabelPath="content.name"
+        }}
     </div>
     <div class="checkbox">
         <label>
-            <input type="checkbox"> Open
+            {{input type="checkbox" checked=model.open}}
+            Open
         </label>
     </div>
     <button type="submit" class="btn btn-default">Save</button>

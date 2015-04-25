@@ -3,3 +3,4 @@ Stocks.ProductRoute = Ember.Route.extend
   setupController: (controller, model) ->
     @_super controller, model
     controller.set 'productTypes', @store.find 'product_type'
+    controller.set 'productPackings', @store.find 'product_packing'
