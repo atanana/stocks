@@ -1,3 +1,6 @@
 Stocks.ProductController = Ember.Controller.extend
   actions:
-    save: () -> @get('model').save()
+    save: () ->
+      model = @get('model')
+      model.save()
+      @transitionToRoute 'category', model.get('category')
