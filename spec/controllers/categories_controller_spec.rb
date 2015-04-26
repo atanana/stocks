@@ -63,6 +63,7 @@ RSpec.describe CategoriesController, type: :controller do
       it 'should delete category' do
         delete :destroy, id:category1.id
         expect(Category.all.size).to eq(1)
+        expect { Category.find category1.id }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end

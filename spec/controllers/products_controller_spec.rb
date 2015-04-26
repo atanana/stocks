@@ -31,6 +31,14 @@ RSpec.describe ProductsController, type: :controller do
       expect(product.product_type).to eq(new_product_type)
       expect(product.product_packing).to eq(new_product_packing)
     end
+
+    context 'delete product' do
+      it 'should delete product' do
+        delete :destroy, id:product.id
+        expect(Product.all.size).to eq(0)
+        expect { Product.find product.id }.to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
   end
 
   context 'without products' do

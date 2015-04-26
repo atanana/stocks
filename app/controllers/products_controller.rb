@@ -11,6 +11,10 @@ class ProductsController < ApplicationController
     render json: Product.create(product_params)
   end
 
+  def destroy
+    render json: product.destroy
+  end
+
   private
 
     def product

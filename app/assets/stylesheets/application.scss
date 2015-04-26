@@ -29,7 +29,7 @@
 }
 
 .products-table {
-  tbody tr td:last-of-type {
+  tbody tr td:nth-last-of-type(-n + 2) {
     text-align: center;
   }
 }

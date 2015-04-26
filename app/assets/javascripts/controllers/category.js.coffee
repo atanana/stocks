@@ -6,3 +6,7 @@ Stocks.CategoryController = Ember.Controller.extend
     closeProduct: (product) ->
       product.set 'open', false
       product.save()
+    deleteProduct: (product) ->
+      bootbox.confirm 'Are you sure?', (result) ->
+        if (result)
+          product.destroyRecord()

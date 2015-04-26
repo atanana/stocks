@@ -5,12 +5,14 @@
             <col width="*"/>
             <col width="150"/>
             <col width="50"/>
+            <col width="50"/>
         </colgroup>
         <thead>
         <tr>
             <th>Product Type</th>
             <th>Product Packing</th>
             <th>Open</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -32,6 +34,10 @@
                         <i class="fa fa-toggle-off" title="Closed. Click to open"
                             {{action 'openProduct' product}}></i>
                     {{/if}}
+                </td>
+
+                <td>
+                    <i class="fa fa-times-circle" {{action 'deleteProduct' product}} title="Delete"></i>
                 </td>
             </tr>
         {{/each}}
