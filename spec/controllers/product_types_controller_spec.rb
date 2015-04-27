@@ -30,4 +30,12 @@ RSpec.describe ProductTypesController, type: :controller do
       end
     end
   end
+
+  context 'without product types' do
+    it 'create new product type' do
+      post :create, product_type: {name: 'test product type'}
+      expect(ProductType.all.size).to eq(1)
+      expect(ProductType.first.name).to eq('test product type')
+    end
+  end
 end

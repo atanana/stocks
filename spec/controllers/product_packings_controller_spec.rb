@@ -29,6 +29,13 @@ RSpec.describe ProductPackingsController, type: :controller do
         expect(data['product_packings'].size).to eq(2)
       end
     end
+  end
 
+  context 'without product packings' do
+    it 'create new product packing' do
+      post :create, product_packing: {name: 'test product packing'}
+      expect(ProductPacking.all.size).to eq(1)
+      expect(ProductPacking.first.name).to eq('test product packing')
+    end
   end
 end
