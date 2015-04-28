@@ -11,6 +11,14 @@ class ProductTypesController < ApplicationController
     render json: ProductType.create(product_type_params)
   end
 
+  def destroy
+    render json: product_type.destroy
+  end
+
+  def update
+    render json: product_type.update(product_type_params)
+  end
+
   private
 
   def product_type
