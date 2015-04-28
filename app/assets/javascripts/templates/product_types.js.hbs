@@ -5,8 +5,8 @@
             <tr>
                 <td>
                     {{productType.name}}
-                    <i class="fa fa-times-circle pull-right" {{action 'deleteProductType' category}} title="Delete"></i>
-                    <i class="fa fa-edit pull-right" {{action 'editProductType' category}} title="Edit"></i>
+                    <i class="fa fa-times-circle pull-right" {{action 'delete' productType}} title="Delete"></i>
+                    <i class="fa fa-edit pull-right" {{action 'edit' productType}} title="Edit"></i>
                 </td>
             </tr>
         {{/each}}
@@ -14,7 +14,7 @@
     </table>
 
     <form class="pull-right">
-        <button {{action 'newProductType'}} class="btn btn-default">Add product type</button>
+        <button {{action 'new'}} class="btn btn-default">Add product type</button>
     </form>
 </div>
 
