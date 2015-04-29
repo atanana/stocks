@@ -11,6 +11,14 @@ class ProductPackingsController < ApplicationController
     render json: ProductPacking.create(product_packing_params)
   end
 
+  def destroy
+    render json: product_packing.destroy
+  end
+
+  def update
+    render json: product_packing.update(product_packing_params)
+  end
+
   private
 
   def product_packing

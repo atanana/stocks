@@ -28,6 +28,21 @@ RSpec.describe ProductPackingsController, type: :controller do
         expect(data.key? 'product_packings').to eq(true)
         expect(data['product_packings'].size).to eq(2)
       end
+
+      it 'should update product packing' do
+        old_name = product_packing.name
+        new_name = 'test'
+        put :update, id: product_packing2.id, product_packing: {name: new_name}
+        expect(response.body).to eq('true')
+        expect(ProductPacking.find(product_packing2.id).name).to eq(new_name)
+        expect(ProductPacking.find(product_packing.id).name).to eq(old_name)
+      end
+
+      it 'should delete product packing' do
+        delete :destroy, id:product_packing.id
+        expect(ProductPacking.all.size).to eq(1)
+        expect { ProductPacking.find product_packing.id }.to raise_error(ActiveRecord::RecordNotFound)
+      end
     end
   end
 
