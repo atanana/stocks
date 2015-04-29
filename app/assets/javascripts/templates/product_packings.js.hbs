@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <table class="table table-striped table-hover">
+        <tbody>
+        {{#each productPacking in controller}}
+            <tr>
+                <td>
+                    {{productPacking.name}}
+                    <i class="fa fa-times-circle pull-right" {{action 'delete' productPacking}} title="Delete"></i>
+                    <i class="fa fa-edit pull-right" {{action 'edit' productPacking}} title="Edit"></i>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+    <form class="pull-right">
+        <button {{action 'new'}} class="btn btn-default">Add product packing</button>
+    </form>
+</div>
+
+{{outlet}}

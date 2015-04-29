@@ -28,3 +28,7 @@ Stocks.CategoriesController = Stocks.DefaultEntityController.extend
 Stocks.ProductTypesController = Stocks.DefaultEntityController.extend
   title: 'New product type'
   recordType: 'product_type'
+
+Stocks.ProductPackingsController = Stocks.DefaultEntityController.extend
+  title: 'New product packing'
+  recordType: 'product_packing'
