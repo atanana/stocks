@@ -19,9 +19,18 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@mixin disabled {
+  cursor: not-allowed;
+  color: $gray;
+}
+
 .fa-times-circle {
   color: $brand-danger;
   cursor: pointer;
+
+  &.disabled {
+    @include disabled;
+  }
 }
 
 .fa-edit, .fa-toggle-on, .fa-toggle-off {

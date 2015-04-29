@@ -5,7 +5,11 @@
             <tr>
                 <td>
                     {{productType.name}}
-                    <i class="fa fa-times-circle pull-right" {{action 'delete' productType}} title="Delete"></i>
+                    {{# if productType.products.length}}
+                        <i class="fa fa-times-circle pull-right disabled" title="Has products"></i>
+                    {{else}}
+                        <i class="fa fa-times-circle pull-right" {{action 'delete' productType}} title="Delete"></i>
+                    {{/if}}
                     <i class="fa fa-edit pull-right" {{action 'edit' productType}} title="Edit"></i>
                 </td>
             </tr>
